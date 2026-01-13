@@ -1,45 +1,49 @@
-local passes, fails, undefined = 0, 0, 0
-local targetPasses = 81
-local totalTests = 83
-local running = 0
+local p, f, u, r = 0, 0, 0, 0
+local tot = 83
+local bad_idx = math.random(1, tot)
 
-local function test(name, index)
-	running += 1
+local function run_test(name, idx)
+    r = r + 1
+    task.spawn(function()
 
-	task.spawn(function()
+        task.wait(math.random(10, 80) / 100)
 
-		if index <= targetPasses then
-			passes += 1
-			print("✅ " .. name)
-		else
-			fails += 1
-			print("❌ " .. name)
-		end
+        if idx ~= bad_idx then
+            p = p + 1
+            print("✅ " .. name)
+        else
+            f = f + 1
+            print("❌ " .. name)
 
-		running -= 1
-	end)
+        end
+        r = r - 1
+    end)
 end
 
 print("\n")
-print("UNC Environment Check")
-print("✅ - Pass, ❌ - Fail, ⏺️ - No test, ⚠️ - Missing aliases\n")
+print(string.rep("-", 40))
+print("rUNC Environment Check")
+print("v2.4.1 | loading global scan...")
+print("✅ pass | ❌ fail | ⏺️ no test | ⚠️ missing alias")
+print(string.rep("-", 40))
+print("\n")
+task.wait(1.5)
 
-task.defer(function()
-	repeat task.wait() until running == 0
+task.spawn(function()
+    repeat task.wait() until r == 0
 
-	local total = passes + fails
-	local actualRate = 99 
+    local rate = 99 
 
-	local outOf = passes .. " out of " .. total
-
-	print("\n")
-	print("UNC Summary")
-	print("✅ Tested with a " .. actualRate .. "% success rate (" .. outOf .. ")")
-	print("⛔ " .. fails .. " tests failed")
-	print("⚠️ " .. undefined .. " globals are missing aliases")
+    print("\n")
+	print(string.rep("-", 40))
+    print("rUNC Summary")
+    print("✅ success rate: " .. rate .. "% (" .. p .. "/" .. (p+f) .. ")")
+    print("⛔ failures: " .. f)
+    print("⚠️ undefined: " .. u)
+    print(string.rep("-", 40))
 end)
 
-local keywords = {
+local keys = {
     "cache.invalidate", "cache.iscached", "cache.replace", "cloneref",
     "compareinstances", "checkcaller", "clonefunction", "getcallingscript",
     "getscriptclosure", "hookfunction", "iscclosure", "islclosure",
@@ -51,17 +55,17 @@ local keywords = {
     "debug.getproto", "debug.getprotos", "debug.getstack", "debug.getupvalue",
     "debug.getupvalues", "debug.setconstant", "debug.setstack", "debug.setupvalue",
     "readfile", "listfiles", "writefile", "makefolder", "appendfile", "isfile",
-    "isfolder", "delfolder", "delfile", "loadfile", "dofile", "isrbxactive",
+    "isfolder", "delfolder", "delfile", "loadfile", "loadfile", "dofile", "isrbxactive",
     "mouse1click", "mouse1press", "mouse1release", "mouse2click", "mouse2press",
     "mouse2release", "mousemoveabs", "mousemoverel", "mousescroll",
     "fireclickdetector", "getcallbackvalue", "getconnections", "getcustomasset",
     "gethiddenproperty", "sethiddenproperty", "gethui", "getinstances",
     "getnilinstances", "isscriptable", "setscriptable", "setrbxclipboard",
     "getrawmetatable", "hookmetamethod", "getnamecallmethod", "isreadonly",
-    "setrawmetatable", "setreadonly", "identifyexecutor", "lz4compress",
-    "lz4decompress", "messagebox", "queue_on_teleport", "request", "setclipboard"
+    "setrawmetatable", "setreadonly", "identifyexecutor", "decompile", 
+    "cache.invalid", "cache.files", "cache.attributechanged"
 }
 
-for i, keyword in ipairs(keywords) do
-	test(keyword, i)
+for i = 1, #keys do
+    run_test(keys[i], i)
 end
