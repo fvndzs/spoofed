@@ -1,4 +1,4 @@
-local p, f, u, r = 0, 0, 0, 0
+local p, f, u, r = 0, 1, 0, 0
 local tot = 83
 local bad_idx = math.random(1, tot)
 
