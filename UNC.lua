@@ -22,7 +22,7 @@ end
 
 print("\n")
 print(string.rep("-", 40))
-print("rUNC Environment Check")
+print("UNC Environment Check")
 print("v2.4.1 | loading global scan...")
 print("✅ pass | ❌ fail | ⏺️ no test | ⚠️ missing alias")
 print(string.rep("-", 40))
@@ -36,7 +36,7 @@ task.spawn(function()
 
     print("\n")
 	print(string.rep("-", 40))
-    print("rUNC Summary")
+    print("UNC Summary")
     print("✅ success rate: " .. rate .. "% (" .. p .. "/" .. (p+f) .. ")")
     print("⛔ failures: " .. f)
     print("⚠️ undefined: " .. u)
