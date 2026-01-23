@@ -70,7 +70,7 @@ task.defer(function()
 	print("⛔ " .. fails .. " tests failed")
 	print("⚠️ " .. undefined .. " globals are missing aliases")
 	print(version)
-	local n,v = "SpoofedExecutor", "1.0.0"
+	local n,v = "Symple", "0.0.7-r1"
 	pcall(function() n,v=identifyexecutor() end)
 	print(n,v)
 	print(("Checksum: a3c46ebce%sab%sfa7c4%sedaaef%sab97c0dc5cf51deec89907af5fe8cad5b7%s748"):format(tostring(rate/(rate/2)), tostring(rate/(rate/2)), tostring(rate/(rate/2)), tostring(rate/(rate/2)), tostring(rate/(rate/2))))
