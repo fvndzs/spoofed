@@ -1,14 +1,14 @@
-local PASS = utf8.char(0x2705)   
+local PASS = utf8.char(0x2705)
+local FAIL = utf8.char(0x274C)
+local INFO = utf8.char(0x2757)
+local COOL = utf8.char(0x1F60E)
+local SMIRK = utf8.char(0x1F60F)
+local PEACH = utf8.char(0x1F351)
 
-local FAIL = utf8.char(0x274C)   
-
-local INFO = utf8.char(0x2757)   
-
-local COOL = utf8.char(0x1F60E)  
-
-local SMIRK = utf8.char(0x1F60F) 
-
-local PEACH = utf8.char(0x1F351) 
+if game.PlaceId ~= 90441122676618 then
+    game:GetService("Players").LocalPlayer:Kick("please join sUNC game to execute")
+    return
+end
 
 local function getTimestamp()
     return os.date("%H:%M:%S")
@@ -72,7 +72,7 @@ fakeLog("- .")
 smallRandomDelay()
 print(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
 smallRandomDelay()
-warn(string.format("%s -- Wave 0 0", getTimestamp()))
+warn(string.format("%s --", identifyexecutor()))
 smallRandomDelay()
 
 fakeLog("STARTING sUNC test. Join our Discord server if you want :) [discord.gg/yQNzDrvbF5]")
