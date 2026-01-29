@@ -1,52 +1,67 @@
-local PASS = utf8.char(0x2705)
-local FAIL = utf8.char(0x274C)
-local INFO = utf8.char(0x2757)
-local COOL = utf8.char(0x1F60E)
-local SMIRK = utf8.char(0x1F60F)
-local PEACH = utf8.char(0x1F351)
-
-local function getTimestamp()
-    return os.date("%H:%M:%S")
-end
-
-local function fakeLog(msg)
-    print(string.format("%s -- %s", getTimestamp(), msg))
-end
-
-local function fakeWarn(msg)
-    warn(string.format("%s -- %s", getTimestamp(), msg))
-end
-
-local function printCustom(symbol, text)
-    print(string.format("%s -- %s %s", getTimestamp(), symbol, text))
-end
-
-local function randomDelay()
-
-    task.wait(math.random(1, 3))
-end
-
-local function smallRandomDelay()
-
-    task.wait(math.random(1, 5) / 10)
-end
-
-local function freeze(seconds)
-    task.wait(seconds)
-end
-
-local function sendNotification(title, text, duration)
-
-    pcall(function()
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = title,
-            Text = text,
-            Duration = duration or 5
-        })
-    end)
-end
-
 task.spawn(function()
+    local PASS = utf8.char(0x2705)
+    local FAIL = utf8.char(0x274C)
+    local INFO = utf8.char(0x2757)
+    local COOL = utf8.char(0x1F60E)
+    local SMIRK = utf8.char(0x1F60F)
+    local PEACH = utf8.char(0x1F351)
+
+    local Players = game:GetService("Players")
+    local LocalPlayer = Players.LocalPlayer
+
+    local function getTimestamp()
+        return os.date("%H:%M:%S")
+    end
+
+    local function fakeLog(msg)
+        print(string.format("%s -- %s", getTimestamp(), msg))
+    end
+
+    local function fakeWarn(msg)
+        warn(string.format("%s -- %s", getTimestamp(), msg))
+    end
+
+    local function printCustom(symbol, text)
+        print(string.format("%s -- %s %s", getTimestamp(), symbol, text))
+    end
+
+    local function randomDelay()
+        task.wait(math.random(1, 2))
+    end
+
+    local function smallRandomDelay()
+        task.wait(math.random(1, 3) / 10)
+    end
+
+    local function sendNotification(title, text, duration)
+        pcall(function()
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = title,
+                Text = text,
+                Duration = duration or 5
+            })
+        end)
+    end
+
+    local function sendClientChatMessage(message)
+        pcall(function()
+            local TextChatService = game:GetService("TextChatService")
+            if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
+
+                local channel = TextChatService.TextChannels:FindFirstChild("RBXGeneral")
+                if channel then
+                    channel:DisplaySystemMessage(message)
+                end
+            else
+
+                game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+                    Text = message,
+                    Color = Color3.fromRGB(255, 255, 255),
+                    Font = Enum.Font.SourceSansBold
+                })
+            end
+        end)
+    end
 
     fakeLog("CP1")
     smallRandomDelay()
@@ -73,13 +88,14 @@ task.spawn(function()
     print(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
     smallRandomDelay()
 
-    warn(string.format("%s -- %s", getTimestamp(), "Wave 1.0.0"))
+    local executorName = "Wave 1.0.0"
+    warn(string.format("%s -- %s", getTimestamp(), executorName))
 
     smallRandomDelay()
 
     fakeLog("STARTING sUNC test. Join our Discord server if you want :) [discord.gg/yQNzDrvbF5]")
 
-    freeze(2) 
+    task.wait(2)
 
     fakeLog("function: 0xb56a9ee4e2806ed2")
     fakeLog("true")
@@ -189,8 +205,7 @@ task.spawn(function()
     for _, f in ipairs(functionsList) do
         local icon = f[1] and PASS or FAIL
         printCustom(icon, f[2])
-        task.wait(0.01) 
-
+        task.wait(0.01)
     end
 
     randomDelay()
@@ -204,7 +219,8 @@ task.spawn(function()
     fakeLog("sUNC, VERSION 2.1.5 }A @>>>ynp|{pr ynznn}rpn nnn")
     fakeLog("Contributors: Lovre, vvultt, GRH, 0_void, Dottik, Pixeluted, bytevector(" .. PEACH .. "), s.irius, citam.")
 
+    local displayName = LocalPlayer.DisplayName or LocalPlayer.Name
+    sendClientChatMessage(string.format("%s has reached 91%% sUNC", displayName))
+
     sendNotification("sUNC", "Couldn't generate link, please retry running sUNC", 8)
-
 end)
-
