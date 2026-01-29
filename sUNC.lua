@@ -5,9 +5,6 @@ local COOL = utf8.char(0x1F60E)
 local SMIRK = utf8.char(0x1F60F)
 local PEACH = utf8.char(0x1F351)
 
--- Removed PlaceId check to prevent kicking/disconnecting
--- The previous check kicked you if you weren't in a specific game, which looks like a crash.
-
 local function getTimestamp()
     return os.date("%H:%M:%S")
 end
@@ -25,12 +22,12 @@ local function printCustom(symbol, text)
 end
 
 local function randomDelay()
-    -- Reduced delay to make script faster and less likely to look frozen
+
     task.wait(math.random(1, 3))
 end
 
 local function smallRandomDelay()
-    -- Reduced delay
+
     task.wait(math.random(1, 5) / 10)
 end
 
@@ -39,7 +36,7 @@ local function freeze(seconds)
 end
 
 local function sendNotification(title, text, duration)
-    -- Wrap in pcall to prevent errors if StarterGui isn't ready
+
     pcall(function()
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = title,
@@ -49,10 +46,8 @@ local function sendNotification(title, text, duration)
     end)
 end
 
--- WRAPPER: We wrap the execution in task.spawn so loadstring returns immediately.
--- This prevents the executor from thinking the script has hung or crashed.
 task.spawn(function()
-    
+
     fakeLog("CP1")
     smallRandomDelay()
     fakeLog("CP2")
@@ -78,18 +73,13 @@ task.spawn(function()
     print(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
     smallRandomDelay()
 
-    -- Safe check for identifyexecutor in case the executor doesn't support it
-    local executorName = "Unknown"
-    pcall(function()
-        executorName = identifyexecutor and identifyexecutor() or "Unknown Executor"
-    end)
-    warn(string.format("%s -- %s", getTimestamp(), executorName))
+    warn(string.format("%s -- %s", getTimestamp(), "Wave 1.0.0"))
 
     smallRandomDelay()
 
     fakeLog("STARTING sUNC test. Join our Discord server if you want :) [discord.gg/yQNzDrvbF5]")
 
-    freeze(2) -- Reduced from 10 to 2 seconds to prevent "frozen" feeling
+    freeze(2) 
 
     fakeLog("function: 0xb56a9ee4e2806ed2")
     fakeLog("true")
@@ -199,7 +189,8 @@ task.spawn(function()
     for _, f in ipairs(functionsList) do
         local icon = f[1] and PASS or FAIL
         printCustom(icon, f[2])
-        task.wait(0.01) -- Tiny wait to keep UI responsive without waiting too long
+        task.wait(0.01) 
+
     end
 
     randomDelay()
@@ -216,3 +207,4 @@ task.spawn(function()
     sendNotification("sUNC", "Couldn't generate link, please retry running sUNC", 8)
 
 end)
+
