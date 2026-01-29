@@ -5,7 +5,9 @@ local COOL = utf8.char(0x1F60E)
 local SMIRK = utf8.char(0x1F60F)
 local PEACH = utf8.char(0x1F351)
 
+-- Check Place ID (Keep this if you only want it running in specific games)
 if game.PlaceId ~= 90441122676618 then
+    -- Note: You might want to remove this check if testing in a different baseplate
     game:GetService("Players").LocalPlayer:Kick("please join sUNC game to execute")
     return
 end
@@ -34,18 +36,20 @@ local function smallRandomDelay()
     task.wait(math.random(10, 25) / 10)
 end
 
+-- FIXED: This function previously used a busy-wait loop which froze the main thread
 local function freeze(seconds)
-    local endTime = tick() + seconds
-    while tick() < endTime do
-    end
+    task.wait(seconds)
 end
 
 local function sendNotification(title, text, duration)
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = title,
-        Text = text,
-        Duration = duration or 5
-    })
+    -- Wrap in pcall to prevent errors if StarterGui isn't ready
+    pcall(function()
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = title,
+            Text = text,
+            Duration = duration or 5
+        })
+    end)
 end
 
 fakeLog("CP1")
@@ -72,12 +76,19 @@ fakeLog("- .")
 smallRandomDelay()
 print(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
 smallRandomDelay()
-warn(string.format("%s --", identifyexecutor()))
+
+-- Safe check for identifyexecutor in case the executor doesn't support it
+local executorName = "Unknown"
+pcall(function()
+    executorName = identifyexecutor and identifyexecutor() or "Unknown Executor"
+end)
+warn(string.format("%s -- %s", getTimestamp(), executorName))
+
 smallRandomDelay()
 
 fakeLog("STARTING sUNC test. Join our Discord server if you want :) [discord.gg/yQNzDrvbF5]")
 
-freeze(10)
+freeze(10) -- This will now wait 10 seconds without crashing the game
 
 fakeLog("function: 0xb56a9ee4e2806ed2")
 fakeLog("true")
@@ -187,6 +198,7 @@ local functionsList = {
 for _, f in ipairs(functionsList) do
     local icon = f[1] and PASS or FAIL
     printCustom(icon, f[2])
+    task.wait(0.05) -- Added a tiny wait here to prevent log spam from lagging lower-end PCs
 end
 
 randomDelay()
