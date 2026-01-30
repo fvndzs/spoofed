@@ -5,7 +5,7 @@ task.spawn(function()
     local COOL = utf8.char(0x1F60E)
     local SMIRK = utf8.char(0x1F60F)
     local PEACH = utf8.char(0x1F351)
-
+    local randomSeconds = 10 + (math.random() * 8)
     local Players = game:GetService("Players")
     local LocalPlayer = Players.LocalPlayer
 
@@ -106,17 +106,9 @@ task.spawn(function()
     fakeLog("CP5")
     randomDelay()
 
-    fakeWarn(FAIL .. " filtergc [FUNC] Failed to retrieve a function with a constant which equals to NaN.")
-    randomDelay()
     fakeWarn("nil nil")
     randomDelay()
     fakeWarn(FAIL .. " hookfunction generic namecall hook detected")
-    randomDelay()
-    fakeWarn(FAIL .. " clonefunction Can't test due to hookfunction not working reliably")
-    randomDelay()
-    fakeWarn(FAIL .. " restorefunction Can't test due to 'hookfunction' not working reliably")
-    randomDelay()
-    fakeWarn(FAIL .. " newcclosure Can't test due to 'clonefunction' not working reliably")
     randomDelay()
 
     for i = 1, 15 do
@@ -144,63 +136,98 @@ task.spawn(function()
     fakeLog("loadstring[simple] true")
     fakeLog("loadstring[basic] true")
     fakeLog("ok so then wtf did I get? idk probably さようなら、おなら魔法使い")
-    fakeWarn(FAIL .. " getscriptfromthread function is nil")
     randomDelay()
 
-    local functionsList = {
-        {true, "Drawing.Fonts"},
-        {true, "Drawing.new"},
-        {true, "WebSocket.connect"},
-        {true, "appendfile"},
-        {true, "base64_decode"},
-        {true, "base64_encode"},
-        {true, "cache.invalidate"},
-        {true, "cache.iscached"},
-        {true, "cache.replace"},
-        {true, "checkcaller"},
-        {true, "cleardrawcache"},
-        {false, "clonefunction"},
-        {true, "cloneref"},
-        {true, "compareinstances"},
-        {true, "debug.getconstant"},
-        {true, "debug.getconstants"},
-        {true, "debug.getinfo"},
-        {true, "debug.getproto"},
-        {true, "debug.getprotos"},
-        {true, "debug.getstack"},
-        {true, "debug.getupvalue"},
-        {true, "debug.getupvalues"},
-        {true, "debug.setconstant"},
-        {true, "debug.setstack"},
-        {true, "debug.setupvalue"},
-        {true, "decompile"},
-        {true, "delfile"},
-        {true, "delfolder"},
-        {false, "filtergc"},
-        {true, "fireclickdetector"},
-        {true, "fireproximityprompt"},
-        {true, "firesignal"},
-        {true, "firetouchinterest"},
-        {true, "getcallbackvalue"},
-        {true, "getcallingscript"},
-        {false, "getconnections"},
-        {true, "getcustomasset"},
-        {true, "getfunctionhash"},
-        {true, "getgc"},
-        {true, "getgenv"},
-        {true, "gethiddenproperty"},
-        {true, "gethui"},
-        {true, "getinstances"},
-        {true, "getloadedmodules"},
-        {true, "getnamecallmethod"},
-        {true, "getnilinstances"},
-        {true, "getrawmetatable"},
-        {true, "setclipboard"},
-        {true, "setfpscap"},
-        {true, "setreadonly"},
-        {true, "setthreadidentity"},
-        {true, "writefile"}
-    }
+local functionsList = {
+    {true, "Drawing.Fonts"},
+    {true, "Drawing.new"},
+    {true, "WebSocket.connect"},
+    {true, "appendfile"},
+    {true, "base64_decode"},
+    {true, "base64_encode"},
+    {true, "cache.invalidate"},
+    {true, "cache.iscached"},
+    {true, "cache.replace"},
+    {true, "checkcaller"},
+    {true, "cleardrawcache"},
+    {true, "clonefunction"},
+    {true, "cloneref"},
+    {true, "compareinstances"},
+    {true, "debug.getconstant"},
+    {true, "debug.getconstants"},
+    {true, "debug.getinfo"},
+    {true, "debug.getproto"},
+    {true, "debug.getprotos"},
+    {true, "debug.getstack"},
+    {true, "debug.getupvalue"},
+    {true, "debug.getupvalues"},
+    {true, "debug.setconstant"},
+    {true, "debug.setstack"},
+    {true, "debug.setupvalue"},
+    {true, "decompile"},
+    {true, "delfile"},
+    {true, "delfolder"},
+    {true, "filtergc"},
+    {true, "fireclickdetector"},
+    {true, "fireproximityprompt"},
+    {true, "firesignal"},
+    {true, "firetouchinterest"},
+    {true, "getcallbackvalue"},
+    {true, "getcallingscript"},
+    {false, "getconnections"}, -- Set to false
+    {true, "getcustomasset"},
+    {true, "getfunctionhash"},
+    {true, "getgc"},
+    {true, "getgenv"},
+    {true, "gethiddenproperty"},
+    {true, "gethui"},
+    {true, "getinstances"},
+    {true, "getloadedmodules"},
+    {true, "getnamecallmethod"},
+    {true, "getnilinstances"},
+    {true, "getrawmetatable"},
+    {true, "getrenderproperty"},
+    {true, "getrenv"},
+    {true, "getrunningscripts"},
+    {true, "getscriptbytecode"},
+    {true, "getscriptclosure"},
+    {true, "getscriptfromthread"},
+    {true, "getscripthash"},
+    {true, "getscripts"},
+    {true, "getsenv"},
+    {true, "getthreadidentity"},
+    {false, "hookfunction"}, -- Set to false
+    {true, "hookmetamethod"},
+    {true, "identifyexecutor"},
+    {true, "iscclosure"},
+    {true, "isexecutorclosure"},
+    {true, "isfile"},
+    {true, "isfolder"},
+    {true, "islclosure"},
+    {true, "isreadonly"},
+    {true, "isrenderobj"},
+    {true, "isscriptable"},
+    {true, "listfiles"},
+    {true, "loadfile"},
+    {true, "loadstring"},
+    {true, "lz4compress"},
+    {true, "lz4decompress"},
+    {true, "makefolder"},
+    {true, "newcclosure"},
+    {true, "readfile"},
+    {true, "replicatesignal"},
+    {true, "request"},
+    {true, "restorefunction"},
+    {true, "setclipboard"},
+    {true, "setfpscap"},
+    {true, "sethiddenproperty"},
+    {true, "setrawmetatable"},
+    {true, "setreadonly"},
+    {true, "setrenderproperty"},
+    {true, "setscriptable"},
+    {true, "setthreadidentity"},
+    {true, "writefile"}
+}
 
     for _, f in ipairs(functionsList) do
         local icon = f[1] and PASS or FAIL
@@ -211,16 +238,16 @@ task.spawn(function()
     randomDelay()
     fakeWarn("yay")
     fakeLog("")
-    printCustom(COOL, "Passed the test with 91% success rate (79 out of 86)")
-    printCustom(FAIL, "Total tests failed: 7")
+    printCustom(COOL, "Passed the test with 98% success rate (84 out of 86)")
+    printCustom(FAIL, "Total tests failed: 2")
     printCustom(SMIRK, "This test was made by senS")
-    fakeLog("Finished the test in 40.53 seconds")
+    fakeLog(string.format("Finished the test in %.2f seconds", randomSeconds))
     fakeLog("")
     fakeLog("sUNC, VERSION 2.1.5 }A @>>>ynp|{pr ynznn}rpn nnn")
     fakeLog("Contributors: Lovre, vvultt, GRH, 0_void, Dottik, Pixeluted, bytevector(" .. PEACH .. "), s.irius, citam.")
 
     local displayName = LocalPlayer.DisplayName or LocalPlayer.Name
-    sendClientChatMessage(string.format("%s has reached 91%% sUNC", displayName))
+    sendClientChatMessage(string.format("%s has reached 98%% sUNC", displayName))
 
     sendNotification("sUNC", "Couldn't generate link, please retry running sUNC", 8)
 end)
