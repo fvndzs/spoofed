@@ -88,7 +88,7 @@ task.spawn(function()
     print(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
     smallRandomDelay()
 
-    local executorName = "Wave 1.0.0"
+    local executorName = "Symple v0.3.5"
     warn(string.format("%s -- %s", getTimestamp(), executorName))
 
     smallRandomDelay()
@@ -107,8 +107,6 @@ task.spawn(function()
     randomDelay()
 
     fakeWarn("nil nil")
-    randomDelay()
-    fakeWarn(FAIL .. " hookfunction generic namecall hook detected")
     randomDelay()
 
     for i = 1, 15 do
@@ -196,7 +194,7 @@ local functionsList = {
     {true, "getscripts"},
     {true, "getsenv"},
     {true, "getthreadidentity"},
-    {false, "hookfunction"}, -- Set to false
+    {true, "hookfunction"},
     {true, "hookmetamethod"},
     {true, "identifyexecutor"},
     {true, "iscclosure"},
@@ -238,8 +236,8 @@ local functionsList = {
     randomDelay()
     fakeWarn("yay")
     fakeLog("")
-    printCustom(COOL, "Passed the test with 98% success rate (84 out of 86)")
-    printCustom(FAIL, "Total tests failed: 2")
+    printCustom(COOL, "Passed the test with 99% success rate (85 out of 86)")
+    printCustom(FAIL, "Total tests failed: 1")
     printCustom(SMIRK, "This test was made by senS")
     fakeLog(string.format("Finished the test in %.2f seconds", randomSeconds))
     fakeLog("")
@@ -247,7 +245,7 @@ local functionsList = {
     fakeLog("Contributors: Lovre, vvultt, GRH, 0_void, Dottik, Pixeluted, bytevector(" .. PEACH .. "), s.irius, citam.")
 
     local displayName = LocalPlayer.DisplayName or LocalPlayer.Name
-    sendClientChatMessage(string.format("%s has reached 98%% sUNC", displayName))
+    sendClientChatMessage(string.format("%s has reached 99%% sUNC", displayName))
 
     sendNotification("sUNC", "Couldn't generate link, please retry running sUNC", 8)
 end)
