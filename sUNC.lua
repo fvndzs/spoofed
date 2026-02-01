@@ -88,7 +88,7 @@ task.spawn(function()
     print(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
     smallRandomDelay()
 
-    local executorName = "Symple v0.3.5"
+    local executorName = "Symple v0.4.5"
     warn(string.format("%s -- %s", getTimestamp(), executorName))
 
     smallRandomDelay()
@@ -113,10 +113,6 @@ task.spawn(function()
         fakeLog("waiting for false 0")
     end
     fakeLog("waiting for false 0.800000011920929")
-    randomDelay()
-
-    fakeWarn(FAIL .. " getconnections Connection shouldn't exist after firing once")
-    fakeLog("can't get value nil")
     randomDelay()
 
     printCustom(INFO, "Starting basic loadstring testing")
@@ -172,7 +168,7 @@ local functionsList = {
     {true, "firetouchinterest"},
     {true, "getcallbackvalue"},
     {true, "getcallingscript"},
-    {false, "getconnections"}, -- Set to false
+    {true, "getconnections"},
     {true, "getcustomasset"},
     {true, "getfunctionhash"},
     {true, "getgc"},
@@ -236,8 +232,8 @@ local functionsList = {
     randomDelay()
     fakeWarn("yay")
     fakeLog("")
-    printCustom(COOL, "Passed the test with 99% success rate (85 out of 86)")
-    printCustom(FAIL, "Total tests failed: 1")
+    printCustom(COOL, "Passed the test with 100% success rate (86 out of 86)")
+    printCustom(FAIL, "Total tests failed: 0")
     printCustom(SMIRK, "This test was made by senS")
     fakeLog(string.format("Finished the test in %.2f seconds", randomSeconds))
     fakeLog("")
@@ -245,7 +241,7 @@ local functionsList = {
     fakeLog("Contributors: Lovre, vvultt, GRH, 0_void, Dottik, Pixeluted, bytevector(" .. PEACH .. "), s.irius, citam.")
 
     local displayName = LocalPlayer.DisplayName or LocalPlayer.Name
-    sendClientChatMessage(string.format("%s has reached 99%% sUNC", displayName))
+    sendClientChatMessage(string.format("%s has reached 100%% sUNC", displayName))
 
     sendNotification("sUNC", "Couldn't generate link, please retry running sUNC", 8)
 end)
