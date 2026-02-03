@@ -107,72 +107,6 @@ randomDelay()
 randomDelay()
         warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to call a nil value (field 'setrenderproperty')", getTimestamp()))
 randomDelay()
-            warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
-    randomDelay()
-    warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to call a nil value (global 'clonefunction')", getTimestamp()))
-    randomDelay()
-        warn(string.format("%s -- false [string \"A9x2Jk8LpQ0mNz1\"]:1: attempt to index nil with number", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"B5r6Yt2Wq8Xv9Z4\"]:1: environment error: firetouchinterest not implemented", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with 'getcallbackvalue'", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"K3m8Nn2Pq5Rt7Yx\"]:1: attempt to call a nil value (global 'getcustomasset')", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"Z9v0Xp4Qw1Lm8Nj\"]:1: critical error: hookfunction is not supported by this executor", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with string 'hookmetamethod'", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"M5t2Vr9Kq1Zw4Px\"]:1: filesystem error: attempt to call a nil value", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"P8n3Lj2Bq0Wv1Rx\"]:1: attempt to index nil with number (missing closure header)", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to call a nil value (field 'setrenderproperty')", getTimestamp()))
-randomDelay()
-            warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
-    randomDelay()
-    warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to call a nil value (global 'clonefunction')", getTimestamp()))
-    randomDelay()
-        warn(string.format("%s -- false [string \"A9x2Jk8LpQ0mNz1\"]:1: attempt to index nil with number", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"B5r6Yt2Wq8Xv9Z4\"]:1: environment error: firetouchinterest not implemented", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with 'getcallbackvalue'", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"K3m8Nn2Pq5Rt7Yx\"]:1: attempt to call a nil value (global 'getcustomasset')", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"Z9v0Xp4Qw1Lm8Nj\"]:1: critical error: hookfunction is not supported by this executor", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with string 'hookmetamethod'", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"M5t2Vr9Kq1Zw4Px\"]:1: filesystem error: attempt to call a nil value", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"P8n3Lj2Bq0Wv1Rx\"]:1: attempt to index nil with number (missing closure header)", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to call a nil value (field 'setrenderproperty')", getTimestamp()))
-randomDelay()
-            warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
-    randomDelay()
-    warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to call a nil value (global 'clonefunction')", getTimestamp()))
-    randomDelay()
-        warn(string.format("%s -- false [string \"A9x2Jk8LpQ0mNz1\"]:1: attempt to index nil with number", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"B5r6Yt2Wq8Xv9Z4\"]:1: environment error: firetouchinterest not implemented", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with 'getcallbackvalue'", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"K3m8Nn2Pq5Rt7Yx\"]:1: attempt to call a nil value (global 'getcustomasset')", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"Z9v0Xp4Qw1Lm8Nj\"]:1: critical error: hookfunction is not supported by this executor", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with string 'hookmetamethod'", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"M5t2Vr9Kq1Zw4Px\"]:1: filesystem error: attempt to call a nil value", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"P8n3Lj2Bq0Wv1Rx\"]:1: attempt to index nil with number (missing closure header)", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to call a nil value (field 'setrenderproperty')", getTimestamp()))
-randomDelay()
     local executorName = "Symple v0.5.0"
     warn(string.format("%s -- %s", getTimestamp(), executorName))
 
@@ -218,94 +152,94 @@ randomDelay()
     randomDelay()
 
 local functionsList = {
-    {false, "Drawing.Fonts"},
-    {false, "Drawing.new"},
-    {false, "WebSocket.connect"},
-    {false, "appendfile"},
-    {false, "base64_decode"},
-    {false, "base64_encode"},
-    {false, "cache.invalidate"},
-    {false, "cache.iscached"},
-    {false, "cache.replace"},
-    {false, "checkcaller"},
-    {false, "cleardrawcache"},
-    {false, "clonefunction"},
-    {false, "cloneref"},
-    {false, "compareinstances"},
-    {false, "debug.getconstant"},
-    {false, "debug.getconstants"},
-    {false, "debug.getinfo"},
-    {false, "debug.getproto"},
-    {false, "debug.getprotos"},
-    {false, "debug.getstack"},
-    {false, "debug.getupvalue"},
-    {false, "debug.getupvalues"},
-    {false, "debug.setconstant"},
-    {false, "debug.setstack"},
-    {false, "debug.setupvalue"},
-    {false, "decompile"},
+    {true, "Drawing.Fonts"},
+    {true, "Drawing.new"},
+    {true, "WebSocket.connect"},
+    {true, "appendfile"},
+    {true, "base64_decode"},
+    {true, "base64_encode"},
+    {true, "cache.invalidate"},
+    {true, "cache.iscached"},
+    {true, "cache.replace"},
+    {true, "checkcaller"},
+    {true, "cleardrawcache"},
+    {true, "clonefunction"},
+    {true, "cloneref"},
+    {true, "compareinstances"},
+    {true, "debug.getconstant"},
+    {true, "debug.getconstants"},
+    {true, "debug.getinfo"},
+    {true, "debug.getproto"},
+    {true, "debug.getprotos"},
+    {true, "debug.getstack"},
+    {true, "debug.getupvalue"},
+    {true, "debug.getupvalues"},
+    {true, "debug.setconstant"},
+    {true, "debug.setstack"},
+    {true, "debug.setupvalue"},
+    {true, "decompile"},
     {false, "delfile"},
-    {false, "delfolder"},
-    {false, "filtergc"},
-    {false, "fireclickdetector"},
-    {false, "fireproximityprompt"},
-    {false, "firesignal"},
+    {true, "delfolder"},
+    {true, "filtergc"},
+    {true, "fireclickdetector"},
+    {true, "fireproximityprompt"},
+    {true, "firesignal"},
     {false, "firetouchinterest"},
     {false, "getcallbackvalue"},
-    {false, "getcallingscript"},
-    {false, "getconnections"},
+    {true, "getcallingscript"},
+    {true, "getconnections"},
     {false, "getcustomasset"},
-    {false, "getfunctionhash"},
-    {false, "getgc"},
-    {false, "getgenv"},
-    {false, "gethiddenproperty"},
-    {false, "gethui"},
-    {false, "getinstances"},
-    {false, "getloadedmodules"},
-    {false, "getnamecallmethod"},
-    {false, "getnilinstances"},
-    {false, "getrawmetatable"},
-    {false, "getrenderproperty"},
-    {false, "getrenv"},
-    {false, "getrunningscripts"},
-    {false, "getscriptbytecode"},
-    {false, "getscriptclosure"},
-    {false, "getscriptfromthread"},
-    {false, "getscripthash"},
-    {false, "getscripts"},
-    {false, "getsenv"},
-    {false, "getthreadidentity"},
-    {false, "hookfunction"},
-    {false, "hookmetamethod"},
-    {false, "identifyexecutor"},
-    {false, "iscclosure"},
-    {false, "isexecutorclosure"},
+    {true, "getfunctionhash"},
+    {true, "getgc"},
+    {true, "getgenv"},
+    {true, "gethiddenproperty"},
+    {true, "gethui"},
+    {true, "getinstances"},
+    {true, "getloadedmodules"},
+    {true, "getnamecallmethod"},
+    {true, "getnilinstances"},
+    {true, "getrawmetatable"},
+    {true, "getrenderproperty"},
+    {true, "getrenv"},
+    {true, "getrunningscripts"},
+    {true, "getscriptbytecode"},
+    {true, "getscriptclosure"},
+    {true, "getscriptfromthread"},
+    {true, "getscripthash"},
+    {true, "getscripts"},
+    {true, "getsenv"},
+    {true, "getthreadidentity"},
+    {true, "hookfunction"},
+    {true, "hookmetamethod"},
+    {true, "identifyexecutor"},
+    {true, "iscclosure"},
+    {true, "isexecutorclosure"},
     {false, "isfile"},
     {false, "isfolder"},
-    {false, "islclosure"},
-    {false, "isreadonly"},
-    {false, "isrenderobj"},
-    {false, "isscriptable"},
-    {false, "listfiles"},
-    {false, "loadfile"},
-    {false, "loadstring"},
-    {false, "lz4compress"},
-    {false, "lz4decompress"},
+    {true, "islclosure"},
+    {true, "isreadonly"},
+    {true, "isrenderobj"},
+    {true, "isscriptable"},
+    {true, "listfiles"},
+    {true, "loadfile"},
+    {true, "loadstring"},
+    {true, "lz4compress"},
+    {true, "lz4decompress"},
     {false, "makefolder"},
-    {false, "newcclosure"},
-    {false, "readfile"},
-    {false, "replicatesignal"},
+    {true, "newcclosure"},
+    {true, "readfile"},
+    {true, "replicatesignal"},
     {true, "request"},
-    {false, "restorefunction"},
-    {false, "setclipboard"},
-    {false, "setfpscap"},
-    {false, "sethiddenproperty"},
-    {false, "setrawmetatable"},
-    {false, "setreadonly"},
+    {true, "restorefunction"},
+    {true, "setclipboard"},
+    {true, "setfpscap"},
+    {true, "sethiddenproperty"},
+    {true, "setrawmetatable"},
+    {true, "setreadonly"},
     {false, "setrenderproperty"},
-    {false, "setscriptable"},
-    {false, "setthreadidentity"},
-    {false, "writefile"}
+    {true, "setscriptable"},
+    {true, "setthreadidentity"},
+    {true, "writefile"}
 }
 
     for _, f in ipairs(functionsList) do
@@ -317,8 +251,8 @@ local functionsList = {
     randomDelay()
     fakeWarn("yay")
     fakeLog("")
-    printCustom(COOL, "Passed the test with 1% success rate (1 out of 88)")
-    printCustom(FAIL, "Total tests failed: 87")
+    printCustom(COOL, "Passed the test with 93% success rate (82 out of 88)")
+    printCustom(FAIL, "Total tests failed: 6")
     printCustom(SMIRK, "This test was made by senS")
     fakeLog(string.format("Finished the test in %.2f seconds", randomSeconds))
     fakeLog("")
@@ -326,7 +260,7 @@ local functionsList = {
     fakeLog("Contributors: Lovre, vvultt, GRH, 0_void, Dottik, Pixeluted, bytevector(" .. PEACH .. "), s.irius, citam.")
 
     local displayName = LocalPlayer.DisplayName or LocalPlayer.Name
-    sendClientChatMessage(string.format("%s has reached 1%% sUNC", displayName))
+    sendClientChatMessage(string.format("%s has reached 90%% sUNC", displayName))
 
     sendNotification("sUNC", "Couldn't generate link, please retry running sUNC", 8)
 end)
