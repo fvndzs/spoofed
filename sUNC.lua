@@ -260,7 +260,7 @@ local functionsList = {
     fakeLog("Contributors: Lovre, vvultt, GRH, 0_void, Dottik, Pixeluted, bytevector(" .. PEACH .. "), s.irius, citam.")
 
     local displayName = LocalPlayer.DisplayName or LocalPlayer.Name
-    sendClientChatMessage(string.format("%s has reached 90%% sUNC", displayName))
+    sendClientChatMessage(string.format("%s has reached 93% sUNC", displayName))
 
     sendNotification("sUNC", "Couldn't generate link, please retry running sUNC", 8)
 end)
