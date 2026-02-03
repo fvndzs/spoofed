@@ -88,7 +88,7 @@ task.spawn(function()
     print(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
     smallRandomDelay()
 
-    local executorName = "Symple v0.4.5"
+    local executorName = "Symple v0.5.0"
     warn(string.format("%s -- %s", getTimestamp(), executorName))
 
     smallRandomDelay()
@@ -144,8 +144,8 @@ local functionsList = {
     {true, "cache.replace"},
     {true, "checkcaller"},
     {true, "cleardrawcache"},
-    {true, "clonefunction"},
-    {true, "cloneref"},
+    {false, "clonefunction"},
+    {false, "cloneref"},
     {true, "compareinstances"},
     {true, "debug.getconstant"},
     {true, "debug.getconstants"},
@@ -165,11 +165,11 @@ local functionsList = {
     {true, "fireclickdetector"},
     {true, "fireproximityprompt"},
     {true, "firesignal"},
-    {true, "firetouchinterest"},
-    {true, "getcallbackvalue"},
+    {false, "firetouchinterest"},
+    {false, "getcallbackvalue"},
     {true, "getcallingscript"},
     {true, "getconnections"},
-    {true, "getcustomasset"},
+    {false, "getcustomasset"},
     {true, "getfunctionhash"},
     {true, "getgc"},
     {true, "getgenv"},
@@ -190,8 +190,8 @@ local functionsList = {
     {true, "getscripts"},
     {true, "getsenv"},
     {true, "getthreadidentity"},
-    {true, "hookfunction"},
-    {true, "hookmetamethod"},
+    {false, "hookfunction"},
+    {false, "hookmetamethod"},
     {true, "identifyexecutor"},
     {true, "iscclosure"},
     {true, "isexecutorclosure"},
@@ -206,8 +206,8 @@ local functionsList = {
     {true, "loadstring"},
     {true, "lz4compress"},
     {true, "lz4decompress"},
-    {true, "makefolder"},
-    {true, "newcclosure"},
+    {false, "makefolder"},
+    {false, "newcclosure"},
     {true, "readfile"},
     {true, "replicatesignal"},
     {true, "request"},
@@ -217,7 +217,7 @@ local functionsList = {
     {true, "sethiddenproperty"},
     {true, "setrawmetatable"},
     {true, "setreadonly"},
-    {true, "setrenderproperty"},
+    {false, "setrenderproperty"},
     {true, "setscriptable"},
     {true, "setthreadidentity"},
     {true, "writefile"}
@@ -232,8 +232,8 @@ local functionsList = {
     randomDelay()
     fakeWarn("yay")
     fakeLog("")
-    printCustom(COOL, "Passed the test with 100% success rate (86 out of 86)")
-    printCustom(FAIL, "Total tests failed: 0")
+    printCustom(COOL, "Passed the test with 89% success rate (78 out of 88)")
+    printCustom(FAIL, "Total tests failed: 10")
     printCustom(SMIRK, "This test was made by senS")
     fakeLog(string.format("Finished the test in %.2f seconds", randomSeconds))
     fakeLog("")
