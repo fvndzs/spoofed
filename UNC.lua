@@ -1,5 +1,5 @@
-local p, f, u, r = 0, 1, 0, 0
-local tot = 83
+local p, f, u, r = 0, 6, 0, 0
+local tot = 88
 local bad_idx = math.random(1, tot)
 
 local function run_test(name, idx)
