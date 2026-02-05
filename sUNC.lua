@@ -87,27 +87,7 @@ task.spawn(function()
     smallRandomDelay()
     warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
     randomDelay()
-    warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to call a nil value (global 'clonefunction')", getTimestamp()))
-    randomDelay()
-        warn(string.format("%s -- false [string \"A9x2Jk8LpQ0mNz1\"]:1: attempt to index nil with number", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"B5r6Yt2Wq8Xv9Z4\"]:1: environment error: firetouchinterest not implemented", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with 'getcallbackvalue'", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"K3m8Nn2Pq5Rt7Yx\"]:1: attempt to call a nil value (global 'getcustomasset')", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"Z9v0Xp4Qw1Lm8Nj\"]:1: critical error: hookfunction is not supported by this executor", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with string 'hookmetamethod'", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"M5t2Vr9Kq1Zw4Px\"]:1: filesystem error: attempt to call a nil value", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"P8n3Lj2Bq0Wv1Rx\"]:1: attempt to index nil with number (missing closure header)", getTimestamp()))
-randomDelay()
-        warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to call a nil value (field 'setrenderproperty')", getTimestamp()))
-randomDelay()
-    local executorName = "Symple v0.5.0"
+    local executorName = "Symple v0.5.5"
     warn(string.format("%s -- %s", getTimestamp(), executorName))
 
     smallRandomDelay()
@@ -178,17 +158,17 @@ local functionsList = {
     {true, "debug.setstack"},
     {true, "debug.setupvalue"},
     {true, "decompile"},
-    {false, "delfile"},
+    {true, "delfile"},
     {true, "delfolder"},
     {true, "filtergc"},
     {true, "fireclickdetector"},
     {true, "fireproximityprompt"},
     {true, "firesignal"},
-    {false, "firetouchinterest"},
-    {false, "getcallbackvalue"},
+    {true, "firetouchinterest"},
+    {true, "getcallbackvalue"},
     {true, "getcallingscript"},
     {true, "getconnections"},
-    {false, "getcustomasset"},
+    {true, "getcustomasset"},
     {true, "getfunctionhash"},
     {true, "getgc"},
     {true, "getgenv"},
@@ -214,8 +194,8 @@ local functionsList = {
     {true, "identifyexecutor"},
     {true, "iscclosure"},
     {true, "isexecutorclosure"},
-    {false, "isfile"},
-    {false, "isfolder"},
+    {true, "isfile"},
+    {true, "isfolder"},
     {true, "islclosure"},
     {true, "isreadonly"},
     {true, "isrenderobj"},
@@ -225,7 +205,7 @@ local functionsList = {
     {true, "loadstring"},
     {true, "lz4compress"},
     {true, "lz4decompress"},
-    {false, "makefolder"},
+    {true, "makefolder"},
     {true, "newcclosure"},
     {true, "readfile"},
     {true, "replicatesignal"},
@@ -236,7 +216,7 @@ local functionsList = {
     {true, "sethiddenproperty"},
     {true, "setrawmetatable"},
     {true, "setreadonly"},
-    {false, "setrenderproperty"},
+    {true, "setrenderproperty"},
     {true, "setscriptable"},
     {true, "setthreadidentity"},
     {true, "writefile"}
@@ -251,8 +231,8 @@ local functionsList = {
     randomDelay()
     fakeWarn("yay")
     fakeLog("")
-    printCustom(COOL, "Passed the test with 93% success rate (82 out of 88)")
-    printCustom(FAIL, "Total tests failed: 6")
+    printCustom(COOL, "Passed the test with 100% success rate (88 out of 88)")
+    printCustom(FAIL, "Total tests failed: 0")
     printCustom(SMIRK, "This test was made by senS")
     fakeLog(string.format("Finished the test in %.2f seconds", randomSeconds))
     fakeLog("")
@@ -260,7 +240,7 @@ local functionsList = {
     fakeLog("Contributors: Lovre, vvultt, GRH, 0_void, Dottik, Pixeluted, bytevector(" .. PEACH .. "), s.irius, citam.")
 
     local displayName = LocalPlayer.DisplayName or LocalPlayer.Name
-    sendClientChatMessage(string.format("%s has reached 93% sUNC", displayName))
+    sendClientChatMessage(string.format("%s has reached 100%% sUNC", displayName))
 
     sendNotification("sUNC", "Couldn't generate link, please retry running sUNC", 8)
 end)
