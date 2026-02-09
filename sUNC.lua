@@ -87,7 +87,7 @@ task.spawn(function()
     smallRandomDelay()
     warn(string.format("%s -- false [string \"7EX0C4h7ArcDTsrt\"]:1: attempt to index nil with number", getTimestamp()))
     randomDelay()
-    local executorName = "Symple v0.5.5"
+    local executorName = "Symple"
     warn(string.format("%s -- %s", getTimestamp(), executorName))
 
     smallRandomDelay()
@@ -138,7 +138,7 @@ local functionsList = {
     {true, "appendfile"},
     {true, "base64_decode"},
     {true, "base64_encode"},
-    {true, "cache.invalidate"},
+    {false, "cache.invalidate"}, -- 1
     {true, "cache.iscached"},
     {true, "cache.replace"},
     {true, "checkcaller"},
@@ -149,15 +149,15 @@ local functionsList = {
     {true, "debug.getconstant"},
     {true, "debug.getconstants"},
     {true, "debug.getinfo"},
-    {true, "debug.getproto"},
+    {false, "debug.getproto"}, -- 2
     {true, "debug.getprotos"},
     {true, "debug.getstack"},
     {true, "debug.getupvalue"},
     {true, "debug.getupvalues"},
     {true, "debug.setconstant"},
-    {true, "debug.setstack"},
+    {false, "debug.setstack"}, -- 3
     {true, "debug.setupvalue"},
-    {true, "decompile"},
+    {false, "decompile"}, -- 4
     {true, "delfile"},
     {true, "delfolder"},
     {true, "filtergc"},
@@ -168,7 +168,7 @@ local functionsList = {
     {true, "getcallbackvalue"},
     {true, "getcallingscript"},
     {true, "getconnections"},
-    {true, "getcustomasset"},
+    {false, "getcustomasset"}, -- 5
     {true, "getfunctionhash"},
     {true, "getgc"},
     {true, "getgenv"},
@@ -177,9 +177,9 @@ local functionsList = {
     {true, "getinstances"},
     {true, "getloadedmodules"},
     {true, "getnamecallmethod"},
-    {true, "getnilinstances"},
+    {false, "getnilinstances"}, -- 6
     {true, "getrawmetatable"},
-    {true, "getrenderproperty"},
+    {false, "getrenderproperty"}, -- 7
     {true, "getrenv"},
     {true, "getrunningscripts"},
     {true, "getscriptbytecode"},
@@ -193,22 +193,22 @@ local functionsList = {
     {true, "hookmetamethod"},
     {true, "identifyexecutor"},
     {true, "iscclosure"},
-    {true, "isexecutorclosure"},
+    {false, "isexecutorclosure"}, -- 8
     {true, "isfile"},
     {true, "isfolder"},
     {true, "islclosure"},
     {true, "isreadonly"},
-    {true, "isrenderobj"},
+    {false, "isrenderobj"}, -- 9
     {true, "isscriptable"},
     {true, "listfiles"},
     {true, "loadfile"},
     {true, "loadstring"},
-    {true, "lz4compress"},
-    {true, "lz4decompress"},
+    {false, "lz4compress"}, -- 10
+    {false, "lz4decompress"}, -- 11
     {true, "makefolder"},
     {true, "newcclosure"},
     {true, "readfile"},
-    {true, "replicatesignal"},
+    {false, "replicatesignal"}, -- 12
     {true, "request"},
     {true, "restorefunction"},
     {true, "setclipboard"},
@@ -216,10 +216,10 @@ local functionsList = {
     {true, "sethiddenproperty"},
     {true, "setrawmetatable"},
     {true, "setreadonly"},
-    {true, "setrenderproperty"},
+    {false, "setrenderproperty"}, -- 13
     {true, "setscriptable"},
     {true, "setthreadidentity"},
-    {true, "writefile"}
+    {false, "writefile"} -- 14
 }
 
     for _, f in ipairs(functionsList) do
@@ -231,7 +231,7 @@ local functionsList = {
     randomDelay()
     fakeWarn("yay")
     fakeLog("")
-    printCustom(COOL, "Passed the test with 100% success rate (88 out of 88)")
+    printCustom(COOL, "Passed the test with 84% success rate (72 out of 86)")
     printCustom(FAIL, "Total tests failed: 0")
     printCustom(SMIRK, "This test was made by senS")
     fakeLog(string.format("Finished the test in %.2f seconds", randomSeconds))
@@ -240,7 +240,7 @@ local functionsList = {
     fakeLog("Contributors: Lovre, vvultt, GRH, 0_void, Dottik, Pixeluted, bytevector(" .. PEACH .. "), s.irius, citam.")
 
     local displayName = LocalPlayer.DisplayName or LocalPlayer.Name
-    sendClientChatMessage(string.format("%s has reached 100%% sUNC", displayName))
+    sendClientChatMessage(string.format("%s has reached 84%% sUNC", displayName))
 
     sendNotification("sUNC", "Couldn't generate link, please retry running sUNC", 8)
 end)
